@@ -58,9 +58,7 @@ def predict():
         return render_template('index.html', result=result)  # Pass 'result' to the template
 
 
+tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
+model = pickle.load(open('model.pkl', 'rb'))
 if __name__ == '__main__':
-    tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
-    model = pickle.load(open('model.pkl', 'rb'))
     app.run(host='0.0.0.0')
-
-
